@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry exported="true" kind="lib" path="C:/Users/sandeepgurram/Desktop/json-20141113.jar"/>
+	<classpathentry kind="lib" path="jar/AKZ JSON Easy Search v1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

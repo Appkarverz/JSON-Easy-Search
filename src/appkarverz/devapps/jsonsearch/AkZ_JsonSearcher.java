@@ -2,7 +2,6 @@ package appkarverz.devapps.jsonsearch;
 
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.concurrent.ArrayBlockingQueue;
 
 import org.json.JSONArray;
 import org.json.JSONException;

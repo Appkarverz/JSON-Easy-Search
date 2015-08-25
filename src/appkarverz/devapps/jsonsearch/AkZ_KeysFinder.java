@@ -13,7 +13,6 @@ public class AkZ_KeysFinder {
 	private int akzInt_curntOpenQuotePos;
 	private int akzInt_curntCloseQuotePos;
 	private int akzInt_curntCommaPos;
-	private int akzInt_closeBracePos;
 
 
 	/**

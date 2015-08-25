@@ -18,3 +18,5 @@ JSONArray jsonArray = (String)AkZ_JsonSearcher.getKeyValue(jsonObj, "stringValue
  ArrayList<Object> arrayList = AkZ_JsonSearcher.getAllKeyValues(jsonObj, key);
 //in this case array list of all the values corresponding to the key is returned. each object need to casted to correct corresponding type.
 
+Git samples:
+Android: https://github.com/Appkarverz/JSON-Easy-Search-Android-Sample-

@@ -20,3 +20,4 @@ JSONArray jsonArray = (String)AkZ_JsonSearcher.getKeyValue(jsonObj, "stringValue
 
 Git samples:
 Android: https://github.com/Appkarverz/JSON-Easy-Search-Android-Sample-
+Java: https://github.com/Appkarverz/JSON-Easy-Search-Java-Example 

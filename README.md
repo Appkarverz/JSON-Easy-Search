@@ -1,7 +1,7 @@
 # JSON-Easy-Search
-It is a java library, can be used to search any JSON object or string or any JSON key value easy with one line of code with worrying about JSON complexity and parsing of JSON. Just pass JSON object and key of value you need to find.
+It is a Java library, can be used to search any JSON object for a string or JSONArray or JSONObject or any JSON with key value, It is easy to use, with one line of code you search any complicated JSON without worrying about JSON complexity and parsing of JSON. All you need to do is to just pass JSON object and key of value you need to find.
 
-Sample Usage
+Usage Steps:
 
 //Step 1: get the JSON object.
 JSONObject jsonObj = new JSONObject();

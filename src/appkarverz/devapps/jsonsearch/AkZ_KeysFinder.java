@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 import org.json.JSONObject;
 
-import com.sun.xml.internal.ws.api.streaming.XMLStreamReaderFactory.Default;
-
 public class AkZ_KeysFinder {
 
 	private int akzInt_curntPos;
@@ -13,7 +11,6 @@ public class AkZ_KeysFinder {
 	private int akzInt_curntOpenQuotePos;
 	private int akzInt_curntCloseQuotePos;
 	private int akzInt_curntCommaPos;
-
 
 	/**
 	 * Finds the top level keys and returns them
@@ -54,7 +51,7 @@ public class AkZ_KeysFinder {
 
 			akzArrayList_keys.add(strKey);
 			akzInt_curntPos = akzInt_curntCommaPos;
-			
+
 		} while (akzInt_curntPos > 1);
 
 		return akzArrayList_keys;

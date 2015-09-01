@@ -12,69 +12,55 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * @author Sandeep, Raghavedra, Praneeth
+ * @author Sandeep Gurram, Raghavedra, Praneeth
  *
  */
 public class Main {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	private final static String key = "id";
 
-		//creating JSON object
-		JSONObject obj = new JSONObject("{"
-					+ "\"pageInfo\": "
-						+ "{"
-							+ "\"pageName\": \"abc\","
-							+ "\"pagePic\": \"link\""
-						+ "}, "
-				+ "\"posts\": ["
-					+ "{	"
-						+ "\"post_id\": \"123456789012_123456789012\","
-						+ "\"actor_id\": \"1234567890\","
-						+ "\"picOfPersonWhoPosted\": \"link\","
-						+ "\"nameOfPersonWhoPosted\": \"Jane Doe\","
-						+ "\"message\": \"Sounds cool. Can't wait to see it!\","
-						+ "\"likesCount\": \"2\","
-						+ "\"comments\": [],"
-						+ "\"timeOfPost\": \"1234567890\""
-					+ "}"
-				+ "],"
-				+ "\"timeOfPost\": \"sandeep\""
-			+ "}");
-		
+	// JSON object
+	private static JSONObject akz_JSONobj = new JSONObject("{" + "\"pageInfo\": " + "{" + "\"pageName\": \"abc\","
+			+ "\"pagePic\": \"link\"" + "}, " + "\"posts\": [" + "{	" + "\"post_id\": \"123456789012_123456789012\","
+			+ "\"actor_id\": \"1234567890\"," + "\"picOfPersonWhoPosted\": \"link\","
+			+ "\"nameOfPersonWhoPosted\": \"Jane Doe\"," + "\"message\": \"Sounds cool. Can't wait to see it!\","
+			+ "\"likesCount\": \"2\"," + "\"comments\": []," + "\"timeOfPost\": \"1234567890\"" + "}" + "],"
+			+ "\"timeOfPost\": \"sandeep\"" + "}");
+
+	public static void main(String[] args) {
+
 		try {
-			//loading JSON from URL(for test purpose)
-			obj = readJsonFromUrl("http://api.openweathermap.org/data/2.5/weather?q=india");
+			// loading JSON from URL(for test purpose)
+			akz_JSONobj = readJsonFromUrl("http://api.openweathermap.org/data/2.5/weather?q=india");
 		} catch (JSONException | IOException e) {
 			e.printStackTrace();
 		}
 
-		String key = "country";
-		System.out.println("JSON -->"+obj);
-		System.out.println("Key -->"+ key);
-		System.out.println("All Value -->"+AkZ_JsonSearcher.getAllKeyValues(obj, key).toString());
-		System.out.println("Value -->"+AkZ_JsonSearcher.getKeyValue(obj, key).toString());
-		
+		System.out.println("JSON -->" + akz_JSONobj);
+		System.out.println("Key -->" + key);
+		System.out.println("All Values -->" + AkZ_JsonSearcher.getAllKeyValues(akz_JSONobj, key).toString());
+		System.out.println("Value -->" + AkZ_JsonSearcher.getKeyValue(akz_JSONobj, key).toString());
+
 	}
 
-	 private static String readAll(Reader rd) throws IOException {
-		    StringBuilder sb = new StringBuilder();
-		    int cp;
-		    while ((cp = rd.read()) != -1) {
-		      sb.append((char) cp);
-		    }
-		    return sb.toString();
-		  }
+	private static String readAll(Reader rd) throws IOException {
+		StringBuilder sb = new StringBuilder();
+		int cp;
+		while ((cp = rd.read()) != -1) {
+			sb.append((char) cp);
+		}
+		return sb.toString();
+	}
 
-		  public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
-		    InputStream is = new URL(url).openStream();
-		    try {
-		      BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-		      String jsonText = readAll(rd);
-		      JSONObject json = new JSONObject(jsonText);
-		      return json;
-		    } finally {
-		      is.close();
-		    }
-		  }
+	public static JSONObject readJsonFromUrl(String url) throws IOException, JSONException {
+		InputStream is = new URL(url).openStream();
+		try {
+			BufferedReader rd = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
+			String jsonText = readAll(rd);
+			JSONObject json = new JSONObject(jsonText);
+			return json;
+		} finally {
+			is.close();
+		}
+	}
 }

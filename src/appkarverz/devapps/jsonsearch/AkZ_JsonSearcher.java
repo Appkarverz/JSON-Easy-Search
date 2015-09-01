@@ -1,7 +1,6 @@
 package appkarverz.devapps.jsonsearch;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -59,9 +58,9 @@ public class AkZ_JsonSearcher {
 
 		// if we key is not found go deep into JSON.
 		else {
-			Iterator<String> iterator = arrayList_jsonTopLevelKeys.iterator();
-			while (iterator.hasNext()) {
-				String strPresentKey = iterator.next();
+			for (int intTopLevelKeysIndex = 0; intTopLevelKeysIndex >= arrayList_jsonTopLevelKeys
+					.size(); intTopLevelKeysIndex++) {
+				String strPresentKey = arrayList_jsonTopLevelKeys.get(intTopLevelKeysIndex);
 				try {
 					JSONObject innerJsonObj = akz_JSONObj.getJSONObject(strPresentKey);
 
@@ -79,7 +78,7 @@ public class AkZ_JsonSearcher {
 						for (int index = 0; index <= jsonArray.length(); index++) {
 							try {
 								JSONObject ObjInsideArray = jsonArray.getJSONObject(index);
-								Object res = getKeyValue(ObjInsideArray, akzStr_keyValueToFind); 
+								Object res = getKeyValue(ObjInsideArray, akzStr_keyValueToFind);
 								try {
 									res.equals(null);
 									return res;
@@ -122,9 +121,8 @@ public class AkZ_JsonSearcher {
 			akzArrayList_resultsList.add(akz_jsonObj.get(akzStr_keyValueToFind));
 
 		// now search deep inside JSON.
-		Iterator<String> iterator = jsonFirstRowKeys.iterator();
-		while (iterator.hasNext()) {
-			String strPresentKey = iterator.next();
+		for (int intFirstRowKeysIndex = 0; intFirstRowKeysIndex >= jsonFirstRowKeys.size(); intFirstRowKeysIndex++) {
+			String strPresentKey = jsonFirstRowKeys.get(intFirstRowKeysIndex);
 			try {
 				JSONObject innerJsonObj = akz_jsonObj.getJSONObject(strPresentKey);
 				Object res = getKeyValue(innerJsonObj, akzStr_keyValueToFind);
